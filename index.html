@@ -1,148 +1,296 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Alma Lasers 2026 市场活动全景调研">
-  <title>Alma Lasers 2026 市场活动全景</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WINGDERM 信息登记</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(160deg, #eaf4ff 0%, #f5f8fc 45%, #e8f6f4 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+  }
+  .card {
+    background: #fff;
+    width: 100%;
+    max-width: 440px;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(15, 60, 110, 0.12);
+    padding: 32px 24px 28px;
+  }
+  .brand {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+  .brand .logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #0b6aa8;
+  }
+  .brand .sub {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #7a8ea3;
+    letter-spacing: 1px;
+  }
+  .field { margin-bottom: 16px; }
+  label {
+    display: block;
+    font-size: 14px;
+    color: #33475b;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  label .req { color: #e03131; margin-left: 2px; }
+  input, select, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    color: #1d2d3d;
+    border: 1.5px solid #d5dfe9;
+    border-radius: 10px;
+    outline: none;
+    background: #fbfdfe;
+    transition: border-color .2s, box-shadow .2s;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a8ea3' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: #0b6aa8;
+    box-shadow: 0 0 0 3px rgba(11, 106, 168, 0.12);
+  }
+  .err { border-color: #e03131 !important; }
+  .hint {
+    display: none;
+    font-size: 12px;
+    color: #e03131;
+    margin-top: 5px;
+  }
+  textarea { resize: vertical; min-height: 88px; }
+  button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #fff;
+    background: linear-gradient(135deg, #0b6aa8, #0e8fc2);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: opacity .2s, transform .1s;
+  }
+  button:active { transform: scale(0.98); }
+  button:disabled { opacity: .6; cursor: not-allowed; }
+  .form-error {
+    display: none;
+    background: #fff0f0;
+    color: #c92a2a;
+    font-size: 13px;
+    border: 1px solid #ffc9c9;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-top: 14px;
+  }
+
+  .success { display: none; text-align: center; padding: 30px 6px; }
+  .success .check {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #e6f9ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .success .check svg { width: 40px; height: 40px; }
+  .success h2 { font-size: 22px; color: #1d2d3d; margin-bottom: 10px; }
+  .success p { font-size: 14px; color: #7a8ea3; line-height: 1.7; }
+  .success a {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 34px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    background: linear-gradient(135deg, #0b6aa8, #0e8fc2);
+    border-radius: 30px;
+    text-decoration: none;
+  }
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#top"><span class="brand-mark">A</span><span>ALMA LASERS<small>2026 MARKET WATCH</small></span></a>
-    <nav><a href="#analytics">结构</a><a href="#activities">活动</a><a href="#social">社媒</a><a href="#adtech">广告</a><a href="#learning">借鉴</a><a href="#channels">渠道</a></nav>
-    <a class="official" href="https://almalasers.com/" target="_blank" rel="noreferrer">官方网站 ↗</a>
-  </header>
+  <div class="card">
+    <div class="brand">
+      <div class="logo">WINGDERM</div>
+      <div class="sub">信息登记表</div>
+    </div>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">JAN—AUG 2026 · GLOBAL ACTIVITY INTELLIGENCE</p>
-        <h1>ALMA LASERS<br><span>市场活动全景</span></h1>
-        <p class="hero-intro">Alma 2026 年不仅参加展会，还通过连续产品 campaign、线上研讨会、媒体活动、客户案例和专家内容，持续推广 Intelligent Aesthetics 与 Longevity 叙事。</p>
-        <div class="hero-actions"><a href="#activities">查看 28 项活动 ↓</a><p>更新至 <strong>2026.09.18</strong><br>含社媒全年核验</p></div>
+    <form id="leadForm" novalidate>
+      <div class="field">
+        <label for="name">姓名<span class="req">*</span></label>
+        <input type="text" id="name" name="姓名" placeholder="请输入您的姓名" required>
+        <div class="hint">请填写姓名</div>
       </div>
-      <div class="hero-media">
-        <div class="hero-photo"></div>
-        <div class="hero-stat"><strong>28</strong><span>项市场活动<br>与传播项目</span></div>
-        <div class="coverage">
-          <p>明确城市与重点市场 <strong>9+</strong></p>
-          <div><span>MILAN</span><span>PARIS</span><span>NEW YORK</span><span>LISBON</span><span>STOCKHOLM</span><span>BANGKOK</span><span>LOS ANGELES</span><span>NEW DELHI</span><span>CHINA</span></div>
-          <small>另覆盖英国、意大利、西班牙、迪拜及全球线上市场</small>
-        </div>
+
+      <div class="field">
+        <label for="company">公司名称<span class="req">*</span></label>
+        <input type="text" id="company" name="公司名称" placeholder="请输入公司名称" required>
+        <div class="hint">请填写公司名称</div>
       </div>
-    </section>
 
-    <section class="signal-strip">
-      <div><span>01</span><strong>4</strong><p>展会与<br>外部学术会议</p></div>
-      <div><span>02</span><strong>3</strong><p>峰会与<br>伙伴会议</p></div>
-      <div><span>03</span><strong>3</strong><p>线上学术<br>研讨会</p></div>
-      <div><span>04</span><strong>18</strong><p>Campaign、发布、<br>媒体与社群传播</p></div>
-    </section>
-
-    <section class="analytics section" id="analytics">
-      <div class="section-head"><div><p class="eyebrow dark">ACTIVITY MIX & SCALE</p><h2>活动结构与规模</h2></div><p>Alma 的公开动作以持续内容传播为主，线下大型活动承担专业关系和产品体验，线上内容负责延长活动周期。</p></div>
-      <div class="analytics-grid">
-        <article class="panel">
-          <div class="panel-head"><span>01</span><h3>八类活动占比</h3></div>
-          <div class="donut-layout">
-            <div class="donut"><div><strong>28</strong><span>项活动</span></div></div>
-            <div class="legend">
-              <p><i class="c1"></i><span>产品 / 主题 campaign</span><b>5 · 18%</b></p>
-              <p><i class="c2"></i><span>展会 / 外部会议</span><b>4 · 14%</b></p>
-              <p><i class="c3"></i><span>媒体 PR</span><b>4 · 14%</b></p>
-              <p><i class="c4"></i><span>节日品牌传播</span><b>4 · 14%</b></p>
-              <p><i class="c5"></i><span>峰会 / 伙伴会议</span><b>3 · 11%</b></p>
-              <p><i class="c6"></i><span>线上研讨会</span><b>3 · 11%</b></p>
-              <p><i class="c7"></i><span>内容栏目 / UGC</span><b>3 · 11%</b></p>
-              <p><i class="c8"></i><span>发布会 / 媒体活动</span><b>2 · 7%</b></p>
-            </div>
-          </div>
-        </article>
-        <article class="panel">
-          <div class="panel-head"><span>02</span><h3>活动形态分层</h3></div>
-          <div class="bars">
-            <div><p><span>线下大型与市场活动</span><b>9 项</b></p><i><em style="width:32%"></em></i><small>展会、全球峰会、伙伴会、发布会与中国项目</small></div>
-            <div><p><span>连续 campaign 与专业内容</span><b>11 项</b></p><i><em style="width:39%"></em></i><small>产品主题、webinar、专家栏目、趋势和 Longevity</small></div>
-            <div><p><span>媒体 PR 与品牌社群</span><b>8 项</b></p><i><em style="width:29%"></em></i><small>奖项、媒体报道、节日和专业人群致敬</small></div>
-          </div>
-          <div class="big-numbers"><div><strong>430</strong><span>Lisbon Academy 医生</span></div><div><strong>45</strong><span>参与国家</span></div><div><strong>163</strong><span>近一年 Instagram 帖子</span></div></div>
-        </article>
+      <div class="field">
+        <label for="type">公司类型<span class="req">*</span></label>
+        <select id="type" name="公司类型" required>
+          <option value="">请选择公司类型</option>
+          <option>经销商 / 代理商</option>
+          <option>医美机构 / 诊所</option>
+          <option>公立医院</option>
+          <option>私立医院</option>
+          <option>美容院 / 会所</option>
+          <option>其他</option>
+        </select>
+        <div class="hint">请选择公司类型</div>
       </div>
-    </section>
 
-    <section class="activities section" id="activities">
-      <div class="section-head"><div><p class="eyebrow dark">ACTIVITY DATABASE</p><h2>2026 年活动明细</h2></div><p>点击活动卡查看完整地点、人物、产品和来源。展会突出参会类型与展位，campaign 突出内容结构和传播结果。</p></div>
-      <div class="controls">
-        <div class="filters">
-          <button class="active" data-filter="all">全部 28</button><button data-filter="exhibition">展会 4</button><button data-filter="owned">峰会 3</button><button data-filter="webinar">Webinar 3</button><button data-filter="campaign">Campaign 5</button><button data-filter="launch">发布会 2</button><button data-filter="pr">媒体 PR 4</button><button data-filter="content">内容 / UGC 3</button><button data-filter="brand">品牌传播 4</button>
-        </div>
-        <label class="search">⌕ <input id="search" type="search" placeholder="搜索活动、产品、城市或人物"></label>
+      <div class="field">
+        <label for="address">公司地址<span class="req">*</span></label>
+        <input type="text" id="address" name="公司地址" placeholder="请输入公司地址" required>
+        <div class="hint">请填写公司地址</div>
       </div>
-      <div class="result-row"><span id="result-count">28 条记录</span><button id="sort">日期：从早到晚 ↕</button></div>
-      <div class="activity-grid" id="activity-grid"></div>
-      <p class="empty" id="empty">没有符合条件的活动。</p>
-    </section>
 
-    <section class="social section" id="social">
-      <div class="section-head"><div><p class="eyebrow dark">INSTAGRAM FULL-YEAR AUDIT · 2025.09—2026.09</p><h2>@alma.lasers.international</h2></div><a href="https://www.instagram.com/alma.lasers.international/" target="_blank" rel="noreferrer">打开 Instagram ↗</a></div>
-      <div class="social-grid"><div><strong>7.9万</strong><span>账号关注者（登录态实测）</span></div><div><strong>1,145</strong><span>账号累计帖子</span></div><div><strong>163</strong><span>近一年帖子逐条抓取</span></div><p>发帖节奏 8–18 帖/月，平均点赞 106，最高单帖 1,007（Opus 主题，2025-10）。全年 0 条 paid partnership 标签——广告不走 IG 付费合作标注，预算集中在 PR、展会与 webinar。内容主轴：Bio-Boost（45 帖）、Longevity（19 帖）、Pixel Peel / Winter Reset（22 帖）、展会与 Academy 复盘、webinar 预告。</p></div>
-      <div class="timeline">
-        <h3>近一年 campaign 时间线（帖内关键词聚类，日期可逐帖核查）</h3>
-        <div><b>2025.09—10</b><p>Bio-Boost 主线起步；Opus 发布与直播预热高峰（9-10 月点赞最高帖均在此）</p></div>
-        <div><b>2026.01—02</b><p>IMCAS 预热 14 帖；02-16 Pixel Peel 与 Winter Reset 同步上线，与官网治疗页 + 发布型 webinar 三线联动</p></div>
-        <div><b>2026.04—05</b><p>Academy Lisbon 集中轰炸 14 帖；04-25 起 Longevity 叙事 19 帖</p></div>
-        <div><b>2026.07—08</b><p>Bio-Boost「返工季」场景连载（同一主题连发 3-4 帖）；Aging Decoded 配套内容</p></div>
-        <div><b>2026.09</b><p>Alma IQ「10 种光模式」专题 + Aesthetic.Biz Rio 预热</p></div>
+      <div class="field">
+        <label for="phone">电话<span class="req">*</span></label>
+        <input type="tel" id="phone" name="电话" placeholder="请输入联系电话" required>
+        <div class="hint">请填写正确的电话号码</div>
       </div>
-    </section>
 
-    <section class="youtube section">
-      <div class="section-head"><div><p class="eyebrow dark">YOUTUBE AUDIT</p><h2>@almalasersinternational4132</h2></div><a href="https://www.youtube.com/@almalasersinternational4132/videos" target="_blank" rel="noreferrer">打开频道 ↗</a></div>
-      <div class="social-grid"><div><strong>21.8万</strong><span>频道订阅</span></div><div><strong>261</strong><span>累计视频</span></div><div><strong>11</strong><span>近一年新增视频</span></div><p>近一年仅 11 条：Pixel Peel（206 次）、WTMC 医生系列（9,127 次）、Welcome to the Aesthetics Clinic ×3、Alma IQ 教程 ×2、2025 Recap（6,113 次）。频道更新频率低，高播放集中在历史视频（Redefining the future 67 万、Clinic Locator 2.4 万）。</p></div>
-    </section>
-
-    <section class="adtech section" id="adtech">
-      <div class="section-head"><div><p class="eyebrow dark">PAID MEDIA EVIDENCE</p><h2>广告投放证据</h2></div><p>来自 Google 广告信息公开中心与 Meta 广告资料库的官方数据（2026-09-21 核查），当场可复现。</p></div>
-      <div class="adtech-layout">
-        <figure class="ad-figure"><img src="alma-google-ad-transparency-de.png" alt="Google 广告信息公开中心：Alma 德国"><figcaption>Google 广告信息公开中心（adstransparency.google.com，地区选德国，搜索 "Alma Lasers"）：Alma Lasers GmbH（德国，已验证）约 30 个广告在投；Alma Lasers Italia, S.r.l.（已验证）约 2 个。美国区核查无 Alma 自有广告。</figcaption></figure>
-        <div class="adtech-facts">
-          <table>
-            <thead><tr><th>平台</th><th>区域</th><th>广告主</th><th>在投广告</th></tr></thead>
-            <tbody>
-              <tr><td>Google 广告信息公开中心</td><td>德国</td><td>Alma Lasers GmbH（已验证）</td><td>约 30 个</td></tr>
-              <tr><td>Google 广告信息公开中心</td><td>意大利</td><td>Alma Lasers Italia, S.r.l.（已验证）</td><td>约 2 个</td></tr>
-              <tr><td>Google 广告信息公开中心</td><td>美国</td><td>—</td><td>无自有广告</td></tr>
-              <tr><td>Meta 广告资料库</td><td>美国</td><td>关键词 "Alma Lasers"（诊所端为主）</td><td>约 31 条</td></tr>
-            </tbody>
-          </table>
-          <p class="adtech-note">Meta 美国区约 31 条在投广告主要来自诊所端（例：蒂华纳 Beauty Zone Spa 投放 Soprano ICE 脱毛广告）。市场含义：Alma 的付费媒体集中在欧洲（德国），美国市场以 PR、展会与 webinar 驱动，自有付费广告弱；诊所端协同广告约 31 条，明显低于 Fotona 的约 300 条。金额 / CPC / ROAS 平台不公开。</p>
-        </div>
+      <div class="field">
+        <label for="email">邮箱<span class="req">*</span></label>
+        <input type="email" id="email" name="邮箱" placeholder="example@email.com" required>
+        <div class="hint">请填写正确的邮箱地址</div>
       </div>
-    </section>
 
-    <section class="learning section" id="learning">
-      <div class="section-head"><div><p class="eyebrow dark">WHAT WE CAN LEARN & DO</p><h2>从 Alma 活动中学什么、补什么</h2></div><p>对应 Alma 已开展的活动，列出可以借鉴的组织方式，以及我们可以优先增加的市场活动。</p></div>
-      <div class="learning-table">
-        <article><div><span>01</span><h3>连续主题 campaign</h3><p>Pixel Peel、IPL Consistency、Longevity</p></div><div><b>可以学习</b><p>同一主题按产品引入、医生判断、病例、技术原理、FAQ 和 webinar 连续发布，让一次主题维持数周声量。</p></div><div><b>可以补位</b><p>把连续内容接入预约、试用、医生咨询和 CRM 培育，用转化数据衡量 campaign，而不只统计播放量。</p></div></article>
-        <article><div><span>02</span><h3>全球 Academy 峰会</h3><p>430 名医生、45 个国家、19 位专家</p></div><div><b>可以学习</b><p>将专家演讲、live demo、病例讨论、分组课程和社交活动组合成品牌年度学术旗舰。</p></div><div><b>可以补位</b><p>在中国和重点区域建立小型季度 Academy、分级认证和会后病例辅导，形成高频医生教育。</p></div></article>
-        <article><div><span>03</span><h3>客户诊所与 KOL 内容</h3><p>Welcome to the Aesthetics Clinic、Soprano 体验系列</p></div><div><b>可以学习</b><p>让诊所经营者、医生和体验者讲述工作流、患者体验和业务增长，比单纯产品介绍更具体。</p></div><div><b>可以补位</b><p>增加设备利用率、治疗数量、复购、客单价和长期随访数据，让客户故事更接近采购决策。</p></div></article>
-        <article><div><span>04</span><h3>Webinar 与 campaign 联动</h3><p>Pixel Peel、IPL、Aging Decoded</p></div><div><b>可以学习</b><p>先用短内容建立问题，再通过直播由专家解释 protocol、患者选择和临床结果。</p></div><div><b>可以补位</b><p>增加中文点播课程、课后测试、病例提交和销售线索分级，把直播变成可复用培训资产。</p></div></article>
-        <article><div><span>05</span><h3>媒体发布与编辑体验</h3><p>纽约 Bio-Boost 早餐、印度 Harmony 发布</p></div><div><b>可以学习</b><p>邀请美容编辑、influencer、医生和行业媒体现场体验，将技术信息转化为媒体选题。</p></div><div><b>可以补位</b><p>针对中国媒体、诊所经营媒体和消费者教育平台设计不同的体验内容与合规传播材料。</p></div></article>
-        <article><div><span>06</span><h3>伙伴 UGC 与品牌社群</h3><p>Almarketing Contest、多元美与节日内容</p></div><div><b>可以学习</b><p>通过比赛、节日和价值观内容让全球伙伴参与创作，扩大本地账号与总部内容的联动。</p></div><div><b>可以补位</b><p>加入病例质量、专业教育和线索贡献指标，设计医生病例赛、诊所开放日及渠道联合内容计划。</p></div></article>
+      <div class="field">
+        <label for="product">意向产品<span class="req">*</span></label>
+        <select id="product" name="意向产品" required>
+          <option value="">请选择意向产品</option>
+          <option>半导体激光脱毛设备</option>
+          <option>皮秒激光</option>
+          <option>调Q激光</option>
+          <option>二氧化碳点阵激光</option>
+          <option>光子嫩肤 IPL</option>
+          <option>其他</option>
+        </select>
+        <div class="hint">请选择意向产品</div>
       </div>
-    </section>
 
-    <section class="channels section" id="channels">
-      <div class="section-head light"><div><p class="eyebrow">CHANNELS</p><h2>活动传播渠道</h2></div><p>Alma 的渠道组合以 Instagram 高频内容为中心，官网承担活动页和新闻稿，线下会议、媒体报道与 webinar 共同放大产品主题。</p></div>
-      <div class="channel-grid"><article><span>01</span><h3>官网 Events / Press</h3><p>发布展会页、峰会信息、奖项和战略新闻，提供可核验的日期、地点与活动结果。</p></article><article><span>02</span><h3>Instagram 连续内容</h3><p>Reels、轮播图和报名帖承担预热、体验、专家解释、现场复盘与长期 campaign。</p></article><article><span>03</span><h3>专业展会与 Academy</h3><p>通过展位、symposium、live demo 和病例讨论触达医生、诊所与全球伙伴。</p></article><article><span>04</span><h3>线上 Webinar</h3><p>围绕患者选择、protocol、光学、临床文献与 Longevity 进行深度学术说明。</p></article><article><span>05</span><h3>美容与生活方式媒体</h3><p>Daily Mail、Marie Claire、Modern Luxury 等媒体帮助产品进入消费者与编辑语境。</p></article><article><span>06</span><h3>伙伴与 UGC</h3><p>通过全球伙伴会议、诊所案例和 Almarketing Contest 激活渠道共同传播。</p></article></div>
-    </section>
+      <div class="field">
+        <label for="remark">备注</label>
+        <textarea id="remark" name="备注" placeholder="选填，如有其他需求请在此说明"></textarea>
+      </div>
 
-    <section class="sources section"><p class="eyebrow dark">SOURCES</p><div><h2>资料来源</h2><p>Alma Lasers 全球官网 Events、Press / Newsroom（61 篇新闻稿逐条核验）、官方 Instagram（2025.09—2026.09 全年 163 帖登录态逐条抓取）、官方 YouTube 频道、公开媒体报道及用户提供的研究工作簿。活动日期、地点、展位、参与者和公开结果均保留对应来源；无法核实的项已在卡片中标明"未公开"。公司横向规模数据（110+ 国家、46,000 家诊所、8 年营收约 1.38 亿→4 亿美元）来自 Leadership Transition 官方新闻稿。</p><a href="ig-alma-202509-202609.json">下载社媒原始数据 ↓</a></div></section>
-  </main>
+      <button type="submit" id="submitBtn">提 交</button>
+      <div class="form-error" id="formError"></div>
+    </form>
 
-  <footer><strong>ALMA LASERS 2026 MARKET WATCH</strong><span>独立市场活动调研 · 非 Alma 官方网站</span><a href="#top">返回顶部 ↑</a></footer>
-  <dialog id="dialog"><button class="close" aria-label="关闭">×</button><div id="dialog-content"></div></dialog>
-  <script src="app.js"></script>
+    <div class="success" id="successBox">
+      <div class="check">
+        <svg viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="11" fill="#37b24d"/>
+          <path d="M6.5 12.5l3.5 3.5 7.5-8" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2>感谢参与！</h2>
+      <p>您的信息已成功提交，<br>我们会尽快与您联系。</p>
+      <a href="https://www.wingderm.com/" target="_blank" rel="noopener">访问官方网站</a>
+    </div>
+  </div>
+
+<script>
+  // TODO: 在 https://formspree.io 注册后，把下面的 xxxxxxxx 替换为你的表单 ID
+  var FORM_ENDPOINT = "https://formspree.io/f/xxxxxxxx";
+
+  var form = document.getElementById("leadForm");
+  var submitBtn = document.getElementById("submitBtn");
+  var formError = document.getElementById("formError");
+  var successBox = document.getElementById("successBox");
+
+  var validators = {
+    name: function (v) { return v.trim().length > 0; },
+    company: function (v) { return v.trim().length > 0; },
+    type: function (v) { return v !== ""; },
+    address: function (v) { return v.trim().length > 0; },
+    phone: function (v) { return /^[0-9+\-\s]{7,20}$/.test(v.trim()); },
+    email: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); },
+    product: function (v) { return v !== ""; }
+  };
+
+  function markError(id, bad) {
+    var el = document.getElementById(id);
+    el.classList.toggle("err", bad);
+    el.parentElement.querySelector(".hint").style.display = bad ? "block" : "none";
+  }
+
+  ["name", "company", "type", "address", "phone", "email", "product"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", function () {
+      markError(id, false);
+    });
+    document.getElementById(id).addEventListener("change", function () {
+      markError(id, false);
+    });
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    formError.style.display = "none";
+
+    var ok = true;
+    Object.keys(validators).forEach(function (id) {
+      var valid = validators[id](document.getElementById(id).value);
+      if (!valid) { ok = false; markError(id, true); }
+    });
+    if (!ok) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "提交中...";
+
+    var data = {};
+    new FormData(form).forEach(function (v, k) { data[k] = v; });
+
+    fetch(FORM_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(data)
+    }).then(function (res) {
+      if (res.ok) {
+        form.style.display = "none";
+        successBox.style.display = "block";
+      } else {
+        throw new Error("submit failed");
+      }
+    }).catch(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "提 交";
+      formError.textContent = "提交失败，请稍后重试或直接联系我们。";
+      formError.style.display = "block";
+    });
+  });
+</script>
 </body>
 </html>
