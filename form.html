@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WINGDERM 信息登记</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(160deg, #eaf4ff 0%, #f5f8fc 45%, #e8f6f4 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+  }
+  .card {
+    background: #fff;
+    width: 100%;
+    max-width: 440px;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(15, 60, 110, 0.12);
+    padding: 32px 24px 28px;
+  }
+  .brand {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+  .brand .logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #0b6aa8;
+  }
+  .brand .sub {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #7a8ea3;
+    letter-spacing: 1px;
+  }
+  .field { margin-bottom: 16px; }
+  label {
+    display: block;
+    font-size: 14px;
+    color: #33475b;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  label .req { color: #e03131; margin-left: 2px; }
+  input, select, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    color: #1d2d3d;
+    border: 1.5px solid #d5dfe9;
+    border-radius: 10px;
+    outline: none;
+    background: #fbfdfe;
+    transition: border-color .2s, box-shadow .2s;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a8ea3' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: #0b6aa8;
+    box-shadow: 0 0 0 3px rgba(11, 106, 168, 0.12);
+  }
+  .err { border-color: #e03131 !important; }
+  .hint {
+    display: none;
+    font-size: 12px;
+    color: #e03131;
+    margin-top: 5px;
+  }
+  textarea { resize: vertical; min-height: 88px; }
+  button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #fff;
+    background: linear-gradient(135deg, #0b6aa8, #0e8fc2);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: opacity .2s, transform .1s;
+  }
+  button:active { transform: scale(0.98); }
+  button:disabled { opacity: .6; cursor: not-allowed; }
+  .form-error {
+    display: none;
+    background: #fff0f0;
+    color: #c92a2a;
+    font-size: 13px;
+    border: 1px solid #ffc9c9;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-top: 14px;
+  }
+
+  .success { display: none; text-align: center; padding: 30px 6px; }
+  .success .check {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #e6f9ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .success .check svg { width: 40px; height: 40px; }
+  .success h2 { font-size: 22px; color: #1d2d3d; margin-bottom: 10px; }
+  .success p { font-size: 14px; color: #7a8ea3; line-height: 1.7; }
+  .success a {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 34px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    background: linear-gradient(135deg, #0b6aa8, #0e8fc2);
+    border-radius: 30px;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand">
+      <div class="logo">WINGDERM</div>
+      <div class="sub">信息登记表</div>
+    </div>
+
+    <form id="leadForm" novalidate>
+      <div class="field">
+        <label for="name">姓名<span class="req">*</span></label>
+        <input type="text" id="name" name="姓名" placeholder="请输入您的姓名" required>
+        <div class="hint">请填写姓名</div>
+      </div>
+
+      <div class="field">
+        <label for="company">公司名称<span class="req">*</span></label>
+        <input type="text" id="company" name="公司名称" placeholder="请输入公司名称" required>
+        <div class="hint">请填写公司名称</div>
+      </div>
+
+      <div class="field">
+        <label for="type">公司类型<span class="req">*</span></label>
+        <select id="type" name="公司类型" required>
+          <option value="">请选择公司类型</option>
+          <option>经销商 / 代理商</option>
+          <option>医美机构 / 诊所</option>
+          <option>公立医院</option>
+          <option>私立医院</option>
+          <option>美容院 / 会所</option>
+          <option>其他</option>
+        </select>
+        <div class="hint">请选择公司类型</div>
+      </div>
+
+      <div class="field">
+        <label for="address">公司地址<span class="req">*</span></label>
+        <input type="text" id="address" name="公司地址" placeholder="请输入公司地址" required>
+        <div class="hint">请填写公司地址</div>
+      </div>
+
+      <div class="field">
+        <label for="phone">电话<span class="req">*</span></label>
+        <input type="tel" id="phone" name="电话" placeholder="请输入联系电话" required>
+        <div class="hint">请填写正确的电话号码</div>
+      </div>
+
+      <div class="field">
+        <label for="email">邮箱<span class="req">*</span></label>
+        <input type="email" id="email" name="邮箱" placeholder="example@email.com" required>
+        <div class="hint">请填写正确的邮箱地址</div>
+      </div>
+
+      <div class="field">
+        <label for="product">意向产品<span class="req">*</span></label>
+        <select id="product" name="意向产品" required>
+          <option value="">请选择意向产品</option>
+          <option>半导体激光脱毛设备</option>
+          <option>皮秒激光</option>
+          <option>调Q激光</option>
+          <option>二氧化碳点阵激光</option>
+          <option>光子嫩肤 IPL</option>
+          <option>其他</option>
+        </select>
+        <div class="hint">请选择意向产品</div>
+      </div>
+
+      <div class="field">
+        <label for="remark">备注</label>
+        <textarea id="remark" name="备注" placeholder="选填，如有其他需求请在此说明"></textarea>
+      </div>
+
+      <button type="submit" id="submitBtn">提 交</button>
+      <div class="form-error" id="formError"></div>
+    </form>
+
+    <div class="success" id="successBox">
+      <div class="check">
+        <svg viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="11" fill="#37b24d"/>
+          <path d="M6.5 12.5l3.5 3.5 7.5-8" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2>感谢参与！</h2>
+      <p>您的信息已成功提交，<br>我们会尽快与您联系。</p>
+      <a href="https://www.wingderm.com/" target="_blank" rel="noopener">访问官方网站</a>
+    </div>
+  </div>
+
+<script>
+  // TODO: 在 https://formspree.io 注册后，把下面的 xxxxxxxx 替换为你的表单 ID
+  var FORM_ENDPOINT = "https://formspree.io/f/xxxxxxxx";
+
+  var form = document.getElementById("leadForm");
+  var submitBtn = document.getElementById("submitBtn");
+  var formError = document.getElementById("formError");
+  var successBox = document.getElementById("successBox");
+
+  var validators = {
+    name: function (v) { return v.trim().length > 0; },
+    company: function (v) { return v.trim().length > 0; },
+    type: function (v) { return v !== ""; },
+    address: function (v) { return v.trim().length > 0; },
+    phone: function (v) { return /^[0-9+\-\s]{7,20}$/.test(v.trim()); },
+    email: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); },
+    product: function (v) { return v !== ""; }
+  };
+
+  function markError(id, bad) {
+    var el = document.getElementById(id);
+    el.classList.toggle("err", bad);
+    el.parentElement.querySelector(".hint").style.display = bad ? "block" : "none";
+  }
+
+  ["name", "company", "type", "address", "phone", "email", "product"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", function () {
+      markError(id, false);
+    });
+    document.getElementById(id).addEventListener("change", function () {
+      markError(id, false);
+    });
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    formError.style.display = "none";
+
+    var ok = true;
+    Object.keys(validators).forEach(function (id) {
+      var valid = validators[id](document.getElementById(id).value);
+      if (!valid) { ok = false; markError(id, true); }
+    });
+    if (!ok) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "提交中...";
+
+    var data = {};
+    new FormData(form).forEach(function (v, k) { data[k] = v; });
+
+    fetch(FORM_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(data)
+    }).then(function (res) {
+      if (res.ok) {
+        form.style.display = "none";
+        successBox.style.display = "block";
+      } else {
+        throw new Error("submit failed");
+      }
+    }).catch(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "提 交";
+      formError.textContent = "提交失败，请稍后重试或直接联系我们。";
+      formError.style.display = "block";
+    });
+  });
+</script>
+</body>
+</html>
